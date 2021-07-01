@@ -52,13 +52,15 @@ describe('Park', function() {
   });
 
   it('should be able to calculate the total number of visitors per day', function() {
-    assert.strictEqual(park.calculateTotalVisitorsPerDay(), 150);
+    assert.strictEqual(park.calculateDailyVisitors(), 150);
   });
 
   it('should be able to calculate the total number of visitors per year', function() {
-    assert.strictEqual(park.calculateTotalVisitorsPerYear(), 54000);
+    assert.strictEqual(park.calculateYearlyVisitors(), 54000);
   });
 
-  it('should be able to calculate total revenue for one year');
+  it('should be able to calculate total revenue for one year', function() {
+    assert.strictEqual(park.calculateAnnualRevenue(), 5400000);
+  });
 
 });

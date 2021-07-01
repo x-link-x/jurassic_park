@@ -35,7 +35,7 @@ class Park {
         return oneSpecies;
     }
 
-    calculateTotalVisitorsPerDay() {
+    calculateDailyVisitors() {
         let totalVisitors = 0;
         for (let dinosaur of this.dinosaurs) {
             totalVisitors += dinosaur.guestsAttractedPerDay;
@@ -43,8 +43,8 @@ class Park {
         return totalVisitors;
     }
 
-    calculateTotalVisitorsPerYear() {
-        return this.calculateTotalVisitorsPerDay() * 360;
+    calculateYearlyVisitors() {
+        return this.calculateDailyVisitors() * 360;
     }
 }
 
