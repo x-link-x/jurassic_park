@@ -15,7 +15,7 @@ describe('Park', function() {
     dinosaur2 = new Dinosaur('stegosaurus', 'herbivore', 40);
     dinosaur3 = new Dinosaur('pterodactyl', 'carnivore', 60);
     dinosaur4 = new Dinosaur('brontosaurus', 'herbivore', 100);
-    park = new Park('Jurassic Park', 100, [dinosaur1, dinosaur2, dinosaur3, dinosaur4]);
+    park = new Park('Jurassic Park', 100, [dinosaur1, dinosaur2, dinosaur3]);
   })
 
   it('should have a name', function() {
@@ -23,14 +23,17 @@ describe('Park', function() {
   });
 
   it('should have a ticket price', function() {
-    assert.strictEqual(park.ticketPrice, 100)
+    assert.strictEqual(park.ticketPrice, 100);
   });
 
   it('should have a collection of dinosaurs', function() {
-    assert.deepStrictEqual(park.dinosaurs, [dinosaur1, dinosaur2, dinosaur3, dinosaur4])
+    assert.deepStrictEqual(park.dinosaurs, [dinosaur1, dinosaur2, dinosaur3]);
   });
 
-  it('should be able to add a dinosaur to its collection');
+  it('should be able to add a dinosaur to its collection', function() {
+    park.addDinosaur();
+    assert.deepStrictEqual(park.dinosaurs, [dinosaur1, dinosaur2, dinosaur3, dinosaur4]);
+  });
 
   it('should be able to remove a dinosaur from its collection');
 
