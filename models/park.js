@@ -46,6 +46,10 @@ class Park {
     calculateYearlyVisitors() {
         return this.calculateDailyVisitors() * 360;
     }
+
+    calculateAnnualRevenue() {
+        return this.calculateYearlyVisitors() * this.ticketPrice;
+    }
 }
 
 module.exports = Park;
