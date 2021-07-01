@@ -59,6 +59,18 @@ class Park {
             }
         }
     }
+
+    getDietTypes() {
+        let dietTypes = {};
+        for (let dinosaur of this.dinosaurs) {
+            if (dietTypes[dinosaur.diet]) {
+                dietTypes[dinosaur.diet] += 1;
+            } else {
+                dietTypes[dinosaur.diet] = 1;
+            }
+        }
+        return dietTypes;
+    }
 }
 
 module.exports = Park;
