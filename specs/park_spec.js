@@ -51,7 +51,9 @@ describe('Park', function() {
     assert.strictEqual(park.oneSpecies('t-rex').length, 2);
   });
 
-  it('should be able to calculate the total number of visitors per day');
+  it('should be able to calculate the total number of visitors per day', function() {
+    assert.strictEqual(park.calculateTotalVisitors(), 150);
+  });
 
   it('should be able to calculate the total number of visitors per year');
 
