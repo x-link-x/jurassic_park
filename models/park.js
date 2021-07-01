@@ -42,6 +42,10 @@ class Park {
         }
         return totalVisitors;
     }
+
+    calculateTotalVisitorsPerYear() {
+        return this.calculateTotalVisitorsPerDay() * 360;
+    }
 }
 
 module.exports = Park;
