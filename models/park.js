@@ -14,6 +14,16 @@ class Park {
         let dinosaurIndex = this.dinosaurs.indexOf(dinosaur);
         this.dinosaurs.splice(dinosaurIndex, 1);
     }
+
+    mostPopular() {
+        let mostPopular = this.dinosaurs[0];
+        for (let dinosaur of this.dinosaurs) {
+            if (dinosaur.guestsAttractedPerDay > mostPopular.guestsAttractedPerDay) {
+                mostPopular = dinosaur;
+            }
+        }
+        return mostPopular;
+    }
 }
 
 module.exports = Park;
