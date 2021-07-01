@@ -36,6 +36,7 @@ describe('Park', function() {
   });
 
   it('should be able to remove a dinosaur from its collection', function() {
+    park.addDinosaur(dinosaur4);
     park.removeDinosaur(dinosaur4);
     assert.deepStrictEqual(park.dinosaurs, [dinosaur1, dinosaur2, dinosaur3]);
   });
