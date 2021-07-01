@@ -50,6 +50,15 @@ class Park {
     calculateAnnualRevenue() {
         return this.calculateYearlyVisitors() * this.ticketPrice;
     }
+
+    removeDinosaursBySpecies(species) {
+        for (let dinosaur of this.dinosaurs) {
+            if (dinosaur.species === species) {
+                let dinosaurIndex = this.dinosaurs.indexOf(dinosaur);
+                this.dinosaurs.splice(dinosaurIndex, 1);
+            }
+        }
+    }
 }
 
 module.exports = Park;
