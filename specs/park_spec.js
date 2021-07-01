@@ -68,6 +68,12 @@ describe('Park', function() {
     park.addDinosaur(dinosaur5);
     park.removeDinosaursBySpecies('t-rex');
     assert.deepStrictEqual(park.dinosaurs, [dinosaur2, dinosaur3, dinosaur4]);
+  });
+
+  it('should be able to provide an object containing each of the diet types and the number of dinosaurs in the park with that diet type', function() {
+    park.addDinosaur(dinosaur4);
+    park.addDinosaur(dinosaur5);
+    assert.deepStrictEqual(park.getDietTypes(), {'carnivore': 3, 'herbivore': 2})
   })
 
 });
