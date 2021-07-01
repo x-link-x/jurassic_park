@@ -1,9 +1,9 @@
 class Park {
 
-    constructor(name, ticketPrice) {
+    constructor(name, ticketPrice, dinosaurs) {
         this.name = name;
         this.ticketPrice = ticketPrice;
-        this.dinosaurs = [];
+        this.dinosaurs = dinosaurs;
     }
 }
 
