@@ -15,15 +15,16 @@ describe('Park', function() {
     dinosaur2 = new Dinosaur('stegosaurus', 'herbivore', 40);
     dinosaur3 = new Dinosaur('pterodactyl', 'carnivore', 60);
     dinosaur4 = new Dinosaur('brontosaurus', 'herbivore', 100);
-    park = new Park('Jurassic Park');
+    park = new Park('Jurassic Park', 100);
   })
 
   it('should have a name', function() {
-    actual = park.name;
-    assert.strictEqual(actual, "Jurassic Park");
+    assert.strictEqual(park.name, "Jurassic Park");
   });
 
-  it('should have a ticket price');
+  it('should have a ticket price', function() {
+    assert.strictEqual(park.ticketPrice, 100)
+  });
 
   it('should have a collection of dinosaurs');
 
