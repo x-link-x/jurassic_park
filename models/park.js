@@ -35,7 +35,7 @@ class Park {
         return oneSpecies;
     }
 
-    calculateTotalVisitors() {
+    calculateTotalVisitorsPerDay() {
         let totalVisitors = 0;
         for (let dinosaur of this.dinosaurs) {
             totalVisitors += dinosaur.guestsAttractedPerDay;
