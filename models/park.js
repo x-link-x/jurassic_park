@@ -24,6 +24,16 @@ class Park {
         }
         return mostPopular;
     }
+
+    oneSpecies(species) {
+        const oneSpecies = [];
+        for (let dinosaur of this.dinosaurs) {
+            if (dinosaur.species === species) {
+                oneSpecies.push(dinosaur);
+            }
+        }
+        return oneSpecies;
+    }
 }
 
 module.exports = Park;

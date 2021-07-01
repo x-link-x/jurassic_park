@@ -11,10 +11,11 @@ describe('Park', function() {
   let park;
 
   beforeEach(function () {
-    dinosaur1 = new Dinosaur('t-rex', 'carinvore', 50);
+    dinosaur1 = new Dinosaur('t-rex', 'carnivore', 50);
     dinosaur2 = new Dinosaur('stegosaurus', 'herbivore', 40);
     dinosaur3 = new Dinosaur('pterodactyl', 'carnivore', 60);
     dinosaur4 = new Dinosaur('brontosaurus', 'herbivore', 100);
+    dinosaur5 = new Dinosaur('t-rex', 'carnivore', 45)
     park = new Park('Jurassic Park', 100, [dinosaur1, dinosaur2, dinosaur3]);
   })
 
@@ -45,7 +46,10 @@ describe('Park', function() {
     assert.strictEqual(park.mostPopular(), dinosaur3);
   });
 
-  it('should be able to find all dinosaurs of a particular species');
+  it('should be able to find all dinosaurs of a particular species', function() {
+    park.addDinosaur(dinosaur5);
+    assert.strictEqual(park.oneSpecies('t-rex').length, 2);
+  });
 
   it('should be able to calculate the total number of visitors per day');
 
