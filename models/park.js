@@ -44,7 +44,7 @@ class Park {
     }
 
     calculateYearlyVisitors() {
-        return this.calculateDailyVisitors() * 360;
+        return this.calculateDailyVisitors() * 365;
     }
 
     calculateAnnualRevenue() {
