@@ -36,23 +36,12 @@ class Park {
         return this.calculateDailyVisitors() * 365;
     }
 
-    calculateAnnualRevenue() {
+    calculateAnnualRevenue() { 
         return this.calculateYearlyVisitors() * this.ticketPrice;
     }
 
     removeDinosaursBySpecies(species) {
-        // this.dinosaurs.forEach(dinosaur => {
-        //     if (dinosaur.species === species) {
-        //         this.dinosaurs.remove(dinosaur);
-        //     }
-        // })
-        
-        // for (let dinosaur of this.dinosaurs) {
-        //     if (dinosaur.species === species) {
-        //         let dinosaurIndex = this.dinosaurs.indexOf(dinosaur);
-        //         this.dinosaurs.splice(dinosaurIndex, 1);
-        //     }
-        // }
+        return this.dinosaurs.filter(dinosaur => dinosaur.species !== species);
     }
 
     getDietTypes() {
