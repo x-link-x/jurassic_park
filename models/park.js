@@ -16,31 +16,20 @@ class Park {
     }
 
     mostPopular() {
-        let mostPopular = this.dinosaurs[0];
-        for (let dinosaur of this.dinosaurs) {
+        return this.dinosaurs.reduce((mostPopular, dinosaur) =>  {
             if (dinosaur.guestsAttractedPerDay > mostPopular.guestsAttractedPerDay) {
                 mostPopular = dinosaur;
             }
-        }
-        return mostPopular;
+            return mostPopular;  
+        });
     }
 
     oneSpecies(species) {
-        const oneSpecies = [];
-        for (let dinosaur of this.dinosaurs) {
-            if (dinosaur.species === species) {
-                oneSpecies.push(dinosaur);
-            }
-        }
-        return oneSpecies;
+        return this.dinosaurs.filter(dinosaur => dinosaur.species === species);
     }
 
     calculateDailyVisitors() {
-        let totalVisitors = 0;
-        for (let dinosaur of this.dinosaurs) {
-            totalVisitors += dinosaur.guestsAttractedPerDay;
-        }
-        return totalVisitors;
+        return this.dinosaurs.reduce((totalVisitors, dinosaur) => totalVisitors + dinosaur.guestsAttractedPerDay, 0);
     }
 
     calculateYearlyVisitors() {
@@ -52,12 +41,18 @@ class Park {
     }
 
     removeDinosaursBySpecies(species) {
-        for (let dinosaur of this.dinosaurs) {
-            if (dinosaur.species === species) {
-                let dinosaurIndex = this.dinosaurs.indexOf(dinosaur);
-                this.dinosaurs.splice(dinosaurIndex, 1);
-            }
-        }
+        // this.dinosaurs.forEach(dinosaur => {
+        //     if (dinosaur.species === species) {
+        //         this.dinosaurs.remove(dinosaur);
+        //     }
+        // })
+        
+        // for (let dinosaur of this.dinosaurs) {
+        //     if (dinosaur.species === species) {
+        //         let dinosaurIndex = this.dinosaurs.indexOf(dinosaur);
+        //         this.dinosaurs.splice(dinosaurIndex, 1);
+        //     }
+        // }
     }
 
     getDietTypes() {
